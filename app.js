@@ -104,3 +104,7 @@ app.get("/profile", (req, res) => {
     res.send(result[0]);
   });
 });
+
+process.on("exit", function () {
+  mongo.close();
+});
